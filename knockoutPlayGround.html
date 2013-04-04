@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>KnockOut Playground</title>
+		<link rel="stylesheet" type="text/css" href="kp.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type='text/javascript' src='knockout-2.2.1.js'></script>
+	</head>
+	<body>
+        <div id="body">
+            <div id="header">Knockout.JS playground</div>
+
+            
+            <div id="navigation">
+                <div id=section1Button class=navButton data-bind="click: showSection1">Section 1</div>
+                <div id=section2Button class=navButton data-bind="click: showSection2">Section 2</div>
+                <div id=section3Button class=navButton data-bind="click: showSection3">Section 3</div>
+            </div>
+
+
+            <div id="middleRight">
+
+                <div id="workingBox">
+                    <div class="section1" data-bind="text: section1, visible: section1Active"></div>
+                    <div class="section2" data-bind="text: section2, visible: section2Active"></div>
+                    <div class="section3" data-bind="text: section3, visible: section3Active"></div>
+                </div>
+
+
+                <div id="toolBox">
+                    ToolBox<br/>
+                    This is another section in the original that this playground came from it was meant to hold things to drag and drop into the middle section.
+                </div>
+            </div>
+            <div id=footer>footer</div>
+        </div>
+	</body>
+    <script type='text/javascript'>
+
+        
+
+        function HideAll() {
+            $(".navButtonSelected").removeClass("navButtonSelected");
+            playground.section1Active(false);
+            playground.section2Active(false);
+            playground.section3Active(false);
+        }
+
+        function PlayGroundViewModel() {
+            var self = this;
+            
+          self.section1 = ko.observable("This is the text for section 1");
+          self.section2 = ko.observable("This is the text for section 2");
+          self.section3 = ko.observable("This is the text for section 3");
+
+
+          self.section1Active = ko.observable(true);  //should also add the correct class to the first nav button.
+          self.section2Active = ko.observable(false);
+          self.section3Active = ko.observable(false);
+
+          //there might be a better way to do this, will leave that to the reader to figure out.
+          self.showSection1 = function() { HideAll(); self.section1Active(true); $("#section1Button").addClass("navButtonSelected");}
+          self.showSection2 = function() { HideAll(); self.section2Active(true); $("#section2Button").addClass("navButtonSelected");}
+          self.showSection3 = function() { HideAll(); self.section3Active(true); $("#section3Button").addClass("navButtonSelected");}
+        }
+
+        var playground = new PlayGroundViewModel();
+
+        if (!window.console) console = {log : function() {}};
+
+        ko.applyBindings(playground);
+    </script>
+</html>
+
+

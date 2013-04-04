@@ -1,0 +1,89 @@
+html,body {
+    margin:0;
+    padding:0;
+	/*font-size: 1.75em;*/
+	background-color: #fff;
+}
+
+#body {
+    width:1060px;
+    margin:0 auto;
+	color: #333;
+}
+
+#header {
+    padding:10px;
+    font-size: 2em;
+	color: #ff9966;
+}
+
+#navigation {
+    float:left;
+    width:320px;
+    height:80%; /*this sets the height, but might not want to use this.*/
+    padding:10px;
+}
+
+#middleRight {
+    float:right;
+    width:720px;
+}
+
+#workingBox {
+    float:left;
+    width:460px;
+    padding:10px;
+}
+
+#toolBox {
+    float:right;
+    width:220px;
+    padding:10px;
+	background-color: #fff;
+}
+
+#footer {
+    clear:both;
+    padding:10px;
+    color: #ff9933;
+}
+
+h3 {
+	color: #ff9933;
+    font-size: 1.75em;
+}
+
+
+
+.navButton {
+	background-color: #ff9966;
+    color: #000;
+	margin: .25em;
+	padding: .25em;
+	min-width: 5em;
+	max-width: 14em;
+	min-height: 1em;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    font-size: 1.25em;
+}
+
+.navButton:hover {
+	background-color: #ff9933;
+	/*text-decoration:underline;*/
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.navButtonSelected {
+	background-color: #ff9900;
+    color: #000;
+	margin: .25em;
+	padding: .25em;
+	min-width: 5em;
+	max-width: 14em;
+	min-height: 1em;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    font-size: 1.25em;
+}
